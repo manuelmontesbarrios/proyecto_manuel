@@ -4,7 +4,6 @@ def login():
     while True:
         try:
             usuario=input("Ingrese su usuario: ")
-            usuario.isalpha()
             clave=int(input("Ingrese su calve: "))
             if usuario=='manuel' and clave==123:
                 def gestion_clientes():
