@@ -1,5 +1,6 @@
 print("Bienvenido a la tienda visttual de boleteria")
 
+datos=[]
 def login():
     while True:
         try:
@@ -11,13 +12,11 @@ def login():
                     edad=int(input("Ingrese su edad: "))
                     CC=int(input("Ingrese su numero de identificacion: "))
                     fecha_nacimiento=input("Ingrese su fecha de nacimiento: ")
+                    datos.append({nombre,edad,CC,fecha_nacimiento})
                 gestion_clientes()
         except ValueError:
             print("El dato ingresado no es un numero") 
             print("")
-        except NameError in usuario:
-            print("el dato ingresado es un numero no un nombre")    
-            print("") 
 login()
 
 def entrada():
@@ -25,7 +24,7 @@ def entrada():
         boleto_normal=0
         boleto_VIP=0
         print("")
-        print("Elija a que quiere entrar")
+        print("Elija si quiere entrar a un partido o al concierto")
         opcion=("n1 -concierto \n2 -partido de futbol \n3 salir")
         print(opcion)
         elegir=int(input("Ingrese la opcion: "))
@@ -53,3 +52,6 @@ def entrada():
                 murlti=cantidad*50000
                 boleto_VIP+=cantidad
 entrada()   
+
+def main():
+    print("su nombre es", datos)
