@@ -14,8 +14,20 @@ def login():
             datos["nombre"]=nombre 
             datos["edad"]=edad 
             datos["CC"]=CC 
-            datos["fecha de nacimiento"]=fecha_nacimiento
-            print(datos)
+datos = {}
+def  login ():
+        usuario = input ( "Ingrese su usuario: " )
+        clave = int ( input ( "Ingrese su calve: " ))
+        if  usuario == 'manuel'  and  clave == 12345:
+            nombre = input ( "Ingrese su nombre: " )
+            edad = int ( input ( "Ingrese su edad: " ))
+            CC = int ( input ( "Ingrese su numero de identificacion: " ))
+            fecha_nacimiento = input ( "Ingrese su fecha de nacimiento: " )
+            datos [ "nombre" ] = nombre 
+            datos [ "edad" ] = edad 
+            datos [ "CC" ] = CC 
+            datos [ "fecha de nacimiento" ] = fecha_nacimiento
+            print ( datos )
     
 def entrada():
     boleto_normal=0
@@ -110,7 +122,5 @@ def entrada():
                         print("No tiene dinero suficiente")
             else:
                 print("ERROR")
-
-   
 login()
 entrada()
