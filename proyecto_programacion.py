@@ -5,18 +5,17 @@ def login():
         usuario=input("Ingrese su usuario: ")
         clave=int(input("Ingrese su calve: "))
         if usuario=='manuel' and clave==12345:
-            def gestion_clientes():
-                nombre=input("Ingrese su nombre: ")
-                edad=int(input("Ingrese su edad: "))
-                CC=int(input("Ingrese su numero de identificacion: "))
-                fecha_nacimiento=input("Ingrese su fecha de nacimiento: ")
-                datos["nombre"]=nombre 
-                datos["edad"]=edad 
-                datos["CC"]=CC 
-                datos["fecha de nacimiento"]=fecha_nacimiento
-                print(datos)
-            gestion_clientes()
-login()
+            nombre=input("Ingrese su nombre: ")
+            nom= nombre.isalpha()
+
+            edad=int(input("Ingrese su edad: "))
+            CC=int(input("Ingrese su numero de identificacion: "))
+            fecha_nacimiento=input("Ingrese su fecha de nacimiento: ")
+            datos["nombre"]=nombre 
+            datos["edad"]=edad 
+            datos["CC"]=CC 
+            datos["fecha de nacimiento"]=fecha_nacimiento
+            print(datos)
     
 def entrada():
     boleto_normal=0
@@ -25,7 +24,7 @@ def entrada():
     while True:
         print("")
         print("Elija al que quiere ingresar")
-        opcion=("\n1 -concierto \n2 -partido de futbol \n3 -factura \n4 -salir")
+        opcion=("\n1 -concierto \n2 -partido de futbol \n3 -factura ")
         print(opcion)
         elegir=int(input("Ingrese la opcion: "))
         if elegir==1:
@@ -75,29 +74,40 @@ def entrada():
                     num_trageta=int(input("Ingrese el numero de la targeta: "))
                     cv=int(input("Ingrese el Cv de la targeta: "))
                     fecha=int(input("Ingrese la fecha de vencimiento: "))
+                    print("Pago exitoso")
+                    exit()
                 if credito==2:
                     num_trageta=int(input("Ingrese el numero de la targeta: "))
                     cv=int(input("Ingrese el Cv de la targeta: "))
                     fecha=int(input("Ingrese la fecha de vencimiento: "))
+                    print("Pago exitoso")
+                    exit()
                 if credito==3:
                     num_trageta=int(input("Ingrese el numero de la targeta: "))
                     cv=int(input("Ingrese el Cv de la targeta: "))
                     fecha=int(input("Ingrese la fecha de vencimiento: "))
+                    print("Pago exitoso")
+                    exit()
                 if credito==4:
                     num_trageta=int(input("Ingrese el numero de la targeta: "))
                     cv=int(input("Ingrese el Cv de la targeta: "))
                     fecha=int(input("Ingrese la fecha de vencimiento: "))
+                    print("Pago exitoso")
+                    exit()
                 else:
                     pass
             elif pago ==2:
-                pass
-                efectivo=int(input("Ingrese la cantidad a pagar: "))
-                if efectivo >= suma:
-                    print("este es su cambio", efectivo-suma)
-                else:
-                    print("No tiene dinero suficiente")
+                while True:
+                    efectivo=int(input("Ingrese la cantidad a pagar: "))
+                    if efectivo >= suma:
+                        print("este es su cambio", efectivo-suma)
+                        print("Gracias por la compra, que tenga un buen dia")
+                        exit()
+                    else:
+                        print("No tiene dinero suficiente")
             else:
-                pass
-entrada()   
+                print("ERROR")
 
-    
+   
+login()
+entrada()
