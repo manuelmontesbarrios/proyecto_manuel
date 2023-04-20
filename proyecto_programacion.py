@@ -17,37 +17,7 @@ def login():
                 print(datos)
             gestion_clientes()
 login()
-def pago_factura():
-    print("\n1 -Targeta de credito \n2 -Efectivo ")
-    pago =int(input("Ingrese el tipo de pago: "))
-    if pago ==1:
-        print("Tipo de targeta de credito \n1 -clásica \n2 -dorada \n3 -platinum \n4 -signature o black")
-        credito=int(input("Ingrese el tipo de targeta de credito: "))
-        if credito==1:
-            num_trageta=int(input("Ingrese el numero de la targeta: "))
-            cv=int(input("Ingrese el Cv de la targeta: "))
-            fecha=int(input("Ingrese la fecha de vencimiento: "))
-        if credito==2:
-            num_trageta=int(input("Ingrese el numero de la targeta: "))
-            cv=int(input("Ingrese el Cv de la targeta: "))
-            fecha=int(input("Ingrese la fecha de vencimiento: "))
-        if credito==3:
-            num_trageta=int(input("Ingrese el numero de la targeta: "))
-            cv=int(input("Ingrese el Cv de la targeta: "))
-            fecha=int(input("Ingrese la fecha de vencimiento: "))
-        if credito==4:
-            num_trageta=int(input("Ingrese el numero de la targeta: "))
-            cv=int(input("Ingrese el Cv de la targeta: "))
-            fecha=int(input("Ingrese la fecha de vencimiento: "))
-        else:
-            pass
-    elif pago ==3:
-        pass
-        efectivo=int(input("Ingrese la cantidad a pagar: "))
-        pass
-    else:
-        pass
-
+    
 def entrada():
     boleto_normal=0
     boleto_VIP=0
@@ -71,6 +41,9 @@ def entrada():
                 boleto_VIP=boleto_VIP+cantidad
                 multi=cantidad*60000 
                 suma=suma+multi
+            else:
+                print("ERROR")
+                break
         elif elegir==2:
             print("partidos \n1 -Cali vs America fecha: 20/04/2023 \n2 Once caldas vs Millonarios fecha:21/04/2023 \n3 Nacional vs Junior fecha: 22/04/2023 \n4 Santa Fe vs Huila fecha: 23/04/2023")
             partido=int(input("Elija el partido que quiere ver: "))
@@ -93,7 +66,38 @@ def entrada():
                   "boletos normales", boleto_normal, 
                   "y boletos VIP", boleto_VIP,
                   "Total a pagar $", suma)
-            pago_factura()
+            print("\n1 -Targeta de credito \n2 -Efectivo ")
+            pago =int(input("Ingrese el tipo de pago: "))
+            if pago ==1:
+                print("Tipo de targeta de credito \n1 -clásica \n2 -dorada \n3 -platinum \n4 -signature o black")
+                credito=int(input("Ingrese el tipo de targeta de credito: "))
+                if credito==1:
+                    num_trageta=int(input("Ingrese el numero de la targeta: "))
+                    cv=int(input("Ingrese el Cv de la targeta: "))
+                    fecha=int(input("Ingrese la fecha de vencimiento: "))
+                if credito==2:
+                    num_trageta=int(input("Ingrese el numero de la targeta: "))
+                    cv=int(input("Ingrese el Cv de la targeta: "))
+                    fecha=int(input("Ingrese la fecha de vencimiento: "))
+                if credito==3:
+                    num_trageta=int(input("Ingrese el numero de la targeta: "))
+                    cv=int(input("Ingrese el Cv de la targeta: "))
+                    fecha=int(input("Ingrese la fecha de vencimiento: "))
+                if credito==4:
+                    num_trageta=int(input("Ingrese el numero de la targeta: "))
+                    cv=int(input("Ingrese el Cv de la targeta: "))
+                    fecha=int(input("Ingrese la fecha de vencimiento: "))
+                else:
+                    pass
+            elif pago ==2:
+                pass
+                efectivo=int(input("Ingrese la cantidad a pagar: "))
+                if efectivo >= suma:
+                    print("este es su cambio", efectivo-suma)
+                else:
+                    print("No tiene dinero suficiente")
+            else:
+                pass
 entrada()   
 
     
