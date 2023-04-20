@@ -46,6 +46,7 @@ def entrada():
         elif elegir==2:
             print("partidos \n1 -Cali vs America fecha: 20/04/2023 \n2 Once caldas vs Millonarios fecha:21/04/2023 \n3 Nacional vs Junior fecha: 22/04/2023 \n4 Santa Fe vs Huila fecha: 23/04/2023")
             partido=int(input("Elija el partido que quiere ver: "))
+            print("")
             print("\n1 -boleto normal $10.000 \n2 boleto VIP $50.000")
             boleto=int(input("Ingrese el tipo de boleto: "))
             if boleto==1:
@@ -65,9 +66,11 @@ def entrada():
                   "boletos normales", boleto_normal, 
                   "y boletos VIP", boleto_VIP,
                   "Total a pagar $", suma)
+            print("")
             print("\n1 -Targeta de credito \n2 -Efectivo ")
             pago =int(input("Ingrese el tipo de pago: "))
             if pago ==1:
+                print("")
                 print("Tipo de targeta de credito \n1 -clásica \n2 -dorada \n3 -platinum \n4 -signature o black")
                 credito=int(input("Ingrese el tipo de targeta de credito: "))
                 if credito==1:
