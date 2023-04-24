@@ -2,7 +2,6 @@ from os import system
 system("cls")
 import time
 
-print("Bienvenido a la tienda virtual de boleteria")
 datos={}
 def entrada():
     boleto_normal=0
@@ -31,7 +30,7 @@ def entrada():
                         break
                     else:
                         print("ERROR, la opcion no existe")
-                    
+                        print("")
             elif elegir==2:
                 while True:
                     print("partidos\n\t 1 -Cali vs America fecha: 20/04/2023 \n\t 2 Once caldas vs Millonarios fecha:21/04/2023 \n\t 3 Nacional vs Junior fecha: 22/04/2023 \n\t 4 Santa Fe vs Huila fecha: 23/04/2023")
@@ -55,6 +54,7 @@ def entrada():
                             print("ERROR, la opcion no existe")
                     else: 
                         print("ERROR, la opcion no existe")
+                        print("")
             elif elegir==3:
                 if suma >=1:
                     print("Su nombre es", datos["nombre"], 
@@ -93,40 +93,58 @@ def entrada():
                         else:
                             print("ERROR")
                 else:
-                    print("ERROR, el total debe ser mayor a $0")
+                    print("ERROR, debe hacer un compra y para el total sea mayor a $0")
+            else:
+                print("ERROR, la opcion no existe")
         except ValueError:
             print("ERROR, no son datos numericos")
 def login():
     while True:
         try:
+            print("BIENVENIDO A LA TIENDA VIRTUAL DE BOLETERIA ^^LA ATAJADA & ROCK^^")
             usuario=input("Ingrese su usuario: ")
             usu=usuario.upper()
             if usu.isalpha()== True:
-                clave=int(input("Ingrese su calve: "))
-                if usu=='MANUEL' and clave==12345:
-                    time.sleep(1)
-                    system("cls")
-                    nombre=input("Ingrese su nombre: ")
-                    if nombre.isalpha()==True:
-                        edad=int(input("Ingrese su edad: "))
-                        CC=int(input("Ingrese su numero de identificacion: "))
-                        fecha_nacimiento=input("Ingrese su fecha de nacimiento separadas DD/MM/AA: ")
-                        datos["nombre"]=nombre 
-                        datos["edad"]=edad 
-                        datos["CC"]=CC 
-                        datos["fecha de nacimiento"]=fecha_nacimiento
-                        entrada()
-                    else:
-                        print("ERROR")
+                if usu=="MANUEL":
+                    clave=int(input("Ingrese su calve: "))
+                    if usu=='MANUEL' and clave==12345:
                         time.sleep(1)
+                        system("cls")
+                        while True:
+                            nombre=input("Ingrese su nombre: ")
+                            if nombre.isalpha()==True:
+                                edad=int(input("Ingrese su edad: "))
+                                if edad>=18:
+                                    CC=int(input("Ingrese su numero de identificacion: "))
+                                    fecha_nacimiento=input("Ingrese su fecha de nacimiento separadas DD/MM/AA: ")
+                                    datos["nombre"]=nombre 
+                                    datos["edad"]=edad 
+                                    datos["CC"]=CC 
+                                    datos["fecha de nacimiento"]=fecha_nacimiento
+                                    entrada()
+                                else:
+                                    print("Lo sentimos usted es menor de edad, por lo tanto no podra comprar boletos ")
+                                    time.sleep(1)
+                                    system("cls")
+                                    break
+                            else:
+                                print("ERROR, no es un nombre")
+                                time.sleep(1)
+                                system("cls")
+                    else:
+                        print("ERROR de clave")
+                        time.sleep(1)
+                        system("cls")
                 else:
-                    print("ERROR, intentelo de nuevo")
+                    print("ERROR los datos no son letras")
                     time.sleep(1)
                     system("cls")
             else:
-                print("ERROR")
+                print("ERROR de usuario")
                 time.sleep(1)
                 system("cls")
         except ValueError:
             print("ERROR, los datos ingresados no son numeros")
+            time.sleep(1)
+            system("cls")
 login()
